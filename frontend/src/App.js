@@ -1,12 +1,12 @@
 import { Route, Routes} from 'react-router-dom';
-import SignUp from './Components/SignUp';
-import SignIn from './Components/SignIn';
-import DashboardSample from './Components/DashboardSample'
+import SignUp from './LinkedPages/SignUp';
+import SignIn from './LinkedPages/SignIn';
+import DashboardSample from './LinkedPages/DashboardSample'
 import ReactCalendar from './Components/ReactCalendar';
-import CourseLink from './Components/LinkedPages/CourseLink';
-import MessageLink from './Components/LinkedPages/MessageLink';
-import ReportLink from './Components/LinkedPages/ReportLink';
-import SettingLink from './Components/LinkedPages/SettingLink';
+import CourseLink from './LinkedPages/CourseLink';
+import MessageLink from './LinkedPages/MessageLink';
+import ReportLink from './LinkedPages/ReportLink';
+import SettingLink from './LinkedPages/SettingLink';
 
 function App() {
 

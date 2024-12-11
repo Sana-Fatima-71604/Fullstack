@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { useState } from "react";
-import './Sign.css'
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Button from './Button';
+import Button from '../Components/Button';
+import '../Styles/Sign.css'
 
 function SignUp() {
 
@@ -52,7 +52,7 @@ function SignUp() {
 
                 <h2>Sign Up</h2>
 
-                <form>
+
                     <div className='div'>Email Id: 
                     </div>
 
@@ -81,7 +81,7 @@ function SignUp() {
 
                     <Button name="SIGN UP" onsubmit={signinHandler}/>
                     <br/>
-                </form>
+           
                 <Link to='/signin' className="link">or Sign_In</Link><br/>
                 
 

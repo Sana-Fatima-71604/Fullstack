@@ -145,7 +145,7 @@ body {
 
 #card4 {
 width: 1000px;
-height: 700px;
+height: fit-content;
 margin: 0 auto;
 float: none;
 margin-bottom: 10px;

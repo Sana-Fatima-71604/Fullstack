@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'
-import './ReactCalendar.css'
+import '../Styles/ReactCalendar.css'
 
 function ReactCalendar() {
     const [date, setDate] = useState(new Date());

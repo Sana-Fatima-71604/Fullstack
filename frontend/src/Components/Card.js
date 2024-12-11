@@ -1,4 +1,4 @@
-import './DashboardSample.css';
+import '../Styles/DashboardSample.css';
 
 function Card({title, count, color}) {
     const style = {

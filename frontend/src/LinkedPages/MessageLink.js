@@ -1,18 +1,18 @@
-import DashboardSample from "../DashboardSample";
-import '../DashboardSample.css';
+import DashboardSample from "./DashboardSample";
+import '../Styles/DashboardSample.css';
 
-function SettingLink () {
+function MessageLink () {
 
     return (
         <>
             {/* {switches} */}
             <DashboardSample props = {
             <div className="card" style={{margin: "25px", width: "1350px", height: "800px"}}>
-                <h2>Settings</h2>
+                <h2>Messages</h2>
             </div>
         }/>
         </>
     )
 };
 
-export default SettingLink;
+export default MessageLink;

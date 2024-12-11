@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from "react";
-import './Sign.css'
+import '../Styles/Sign.css'
 import axios from 'axios';
 import {toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

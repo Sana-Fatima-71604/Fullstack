@@ -1,5 +1,5 @@
-import DashboardSample from "../DashboardSample";
-import '../DashboardSample.css';
+import DashboardSample from "./DashboardSample";
+import '../Styles/DashboardSample.css';
 
 function ReportLink () {
 
