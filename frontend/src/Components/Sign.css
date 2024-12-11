@@ -1,0 +1,108 @@
+#login {
+    width: 400px;
+    height: 600px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Added */
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+    justify-content: center;
+}
+
+#signUp {
+    width: 450px;
+    height: 650px;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 10px; /* Added */
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: white;
+    justify-content: center;
+}
+
+#link {
+    justify-content: center;
+}
+
+button {
+    border-radius: 80px;
+    width: 300px;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+body {
+    background: url('https://static.vecteezy.com/system/resources/previews/001/227/744/original/trendy-color-gradient-creative-background-vector.jpg') no-repeat center center fixed;
+    background-color: lightblue;
+    background-size: cover;
+}
+
+.link {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div {
+    margin-bottom: 10px;
+    font-size: 15px;
+    display:flex;
+    justify-content: start;
+}
+
+.fa:hover {
+    opacity: 0.9;
+}
+
+.fa-facebook {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-google {
+    background: #cb2027;
+    color: white;
+}
+
+.fa-twitter {
+    background: lightskyblue;
+    color: rgb(17, 146, 252);
+    
+}
+
+.fa {
+    padding: 10px;
+    font-size: 10px;
+    width: 50px;
+    text-decoration: none;
+    margin: 5px 10px;
+    border-radius: 50%;
+}

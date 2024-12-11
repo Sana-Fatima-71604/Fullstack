@@ -1,0 +1,11 @@
+**/node_modules
+**/.idea
+**/dist
+**/Session.vim
+Session.vim
+.idea
+*.log
+.env
+.env.production
+**/.env.staging
+ 
