@@ -46,7 +46,7 @@ function SignIn() {
 
                 <div className='div'>Username
                 </div>
-                <form>
+
                     <input type="text" placeholder="Type your Username" value={currentUservalue} onChange={(e) => {
                         updateUservalue(e.target.value)
                     }}/>
@@ -58,7 +58,7 @@ function SignIn() {
 
 
                     <button type="submit" onClick={signinHandler} className="btn btn-primary" disabled={isDisabled}>LOGIN</button><br/>
-                </form>
+      
 
                 <Link to='/signup' className="link">or Sign_Up</Link><br/>
 
