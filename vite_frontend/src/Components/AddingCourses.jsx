@@ -8,7 +8,7 @@ function AddingCourses() {
 
     const [currentName, updateName] = useState("")
     const [currentLevel, updateLevel] = useState("")
-    const [currentHours, updateHours] = useState("")
+    const [currentHours, updateHours] = useState(0)
     const [currentStatus, updateStatus] = useState("")
 
     const submitCourse = async (event) => {
@@ -25,19 +25,26 @@ function AddingCourses() {
         console.log(course)
     
         try {
+            if(currentName==="" || currentLevel==="" || currentStatus==="" || currentHours === 0) {
+                alert("Please enter the values")
+            } else{
+
             const response = await axios.post(
                 "http://localhost:4000/api/course/add", course
             )
             if (response.status === 201) {
                 toast(response.data.message)
-            }
+
+            }}
         } catch (error) {
+            toast("There is some error")
                 console.log(error)
         }
     }
 
     return (
     <>
+                <ToastContainer/>
         <form onSubmit={submitCourse}>
             <Text size="md">Course Name: </Text>
             <TextInput
@@ -57,7 +64,7 @@ function AddingCourses() {
             />
             <Text size="md">Hours: </Text>
             <TextInput
-            type="text"
+            type="number"
                 placeholder="Enter the number of hours"
                 value={currentHours}
                 size="md"
@@ -76,7 +83,7 @@ function AddingCourses() {
             <Button variant="filled" type="submit">
                 Submit
             </Button>
-            <ToastContainer/>
+
         </form>
 
     </>

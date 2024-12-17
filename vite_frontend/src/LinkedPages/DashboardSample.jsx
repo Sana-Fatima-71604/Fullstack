@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState} from 'react';
 import Card from '../Components/Card';
 import '../Styles/DashboardSample.css';
+import { Table, Button } from '@mantine/core'
 // import ReactCalendar from '../Components/ReactCalendar';
 
 function DashboardSample({props}) {
@@ -76,31 +77,29 @@ function DashboardSample({props}) {
                             <br/>
                             <div className="card" id="card4"><p style={{fontSize: "30px", lineHeight: "1", display: "flex", justifyContent: "space-between", marginTop: "10px", marginBottom: "15px"}}>My Courses<a href="/signin" style={{fontSize: "20px"}}>See all</a></p>
                             <br/>
-                            <table>
-                                <thead>
-                                    <tr style={{color: "grey"}}>
+                            <Table horizontalSpacing="xl">
+                                <Table.Thead>
+                                    <Table.Tr style={{color: "grey"}}>
                                         {
                                             tableTitles.map((tr, index) => {
-                                                return (<th key={index}>{tr}</th>)
+                                                return (<Table.Th key={index}>{tr}</Table.Th>)
                                             })
                                         }
-                                    </tr>
-                                </thead>
+                                    </Table.Tr>
+                                </Table.Thead>
 
-                                <tbody>                                
+                                <Table.Tbody>                                
                                     {courses.map((table, index) => {
                                     const {name, level, hours, status} = table || {};
-                                    return (<tr key ={index}>
-                                                <th style={{fontWeight: "normal"}}><i className="fa fa-cloud" style={{padding: "0px", fontSize: "20px"}}></i><p style={{padding: "0px", margin: "0px"}}>{name}</p><p>10 lessons</p></th>
-                                                <th style={{fontWeight: "normal"}}>{level}</th>
-                                                <th style={{fontWeight: "normal"}}>{hours}</th>
-                                                <th><button style={{borderRadius: "10px", fontWeight: "bold"}}>{status}</button></th>
-                                    </tr>)
+                                    return (<Table.Tr key ={index}>
+                                                <Table.Th style={{fontWeight: "normal"}}><i className="fa fa-cloud" style={{padding: "0px", fontSize: "20px"}}></i><p style={{padding: "0px", margin: "0px"}}>{name}</p><p>10 lessons</p></Table.Th>
+                                                <Table.Th style={{fontWeight: "normal"}}>{level}</Table.Th>
+                                                <Table.Th style={{fontWeight: "normal"}}>{hours}</Table.Th>
+                                                <Table.Th><button style={{borderRadius: "10px", fontWeight: "bold"}}>{status}</button></Table.Th>
+                                    </Table.Tr>)
                                 })}
-                                </tbody>
-
-                            
-                            </table>
+                                </Table.Tbody>
+                            </Table>
                             </div>
                         </div>
                         
