@@ -1,75 +1,94 @@
-import { Link } from 'react-router-dom';
-import { useState } from "react";
-import '../Styles/Sign.css'
-import axios from 'axios';
-import {toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import "../Styles/Sign.css";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function SignIn() {
+function SignIn({ prop }) {
+  const [currentmailvalue, updateUsermailvalue] = useState("");
+  const [currentPasswordvalue, updatePasswordvalue] = useState("");
+  const navigate = useNavigate();
 
-    const [currentUservalue, updateUservalue] = useState("")
-    const [currentPasswordvalue, updatePasswordvalue] = useState("")
+  const isDisabled = currentPasswordvalue === "" || currentmailvalue === "";
 
-    const isDisabled = currentPasswordvalue === "" || currentUservalue === "";
+  const signinHandler = async () => {
+    console.log(currentmailvalue);
+    console.log(currentPasswordvalue);
 
-    const signinHandler = async () => {
-
-        console.log(currentUservalue);
-        console.log(currentPasswordvalue);
-
-        const user= {name: currentUservalue, password: currentPasswordvalue}
-        try {
-            const response = await axios.post(
-                "http://localhost:4000/api/user/login", user
-            )
-            if (response.status === 200) {
-                toast(response.data.message)
-            }
-        } catch (error) {
-            if (error.response) {
-                if (error.response.status === 404) {
-                    toast(error.response.data.message)
-                } else {
-                    toast("An error occurred: " + error.response.data.message)
-                }
-                console.log(error)
-            }
-        
-
+    const user = { email: currentmailvalue, password: currentPasswordvalue };
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/user/login",
+        user
+      );
+      if (response.status === 200) {
+        toast(response.data.message);
+        prop(currentmailvalue);
+        navigate("/Settings");
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 404) {
+          toast(error.response.data.message);
+        } else {
+          toast("An error occurred: " + error.response.data.message);
+        }
+        console.log(error);
+      }
     }
-    }
+  };
 
-    return (
-        <div id="login">
-            
-                <h2>Login</h2>
+  return (
+    <div id="login">
+      <h2>Login</h2>
 
-                <div className='div'>Username
-                </div>
+      <div className="signin">Usermail</div>
 
-                    <input type="text" placeholder="Type your Username" value={currentUservalue} onChange={(e) => {
-                        updateUservalue(e.target.value)
-                    }}/>
-                    <br/>
-                    <div className='div'>Password</div>
-                    <input type="text" placeholder="Type your Password" value={currentPasswordvalue} onChange={(e) => {
-                        updatePasswordvalue(e.target.value)
-                    }}/><br/>
+      <input
+        type="text"
+        placeholder="Type your Usermail"
+        value={currentmailvalue}
+        onChange={(e) => {
+          updateUsermailvalue(e.target.value);
+        }}
+      />
+      <br />
+      <div className="signin">Password</div>
+      <input
+        type="password"
+        placeholder="Type your Password"
+        value={currentPasswordvalue}
+        onChange={(e) => {
+          updatePasswordvalue(e.target.value);
+        }}
+      />
+      <br />
 
+      <button
+        type="submit"
+        onClick={signinHandler}
+        className="btn btn-primary"
+        disabled={isDisabled}
+      >
+        LOGIN
+      </button>
+      <br />
 
-                    <button type="submit" onClick={signinHandler} className="btn btn-primary" disabled={isDisabled}>LOGIN</button><br/>
-      
+      <Link to="/signup" className="link">
+        or Sign_Up
+      </Link>
+      <br />
 
-                <Link to='/signup' className="link">or Sign_Up</Link><br/>
+      <div className="link">
+        <Link to="#" className="fa fa-facebook"></Link>
+        <Link to="#" className="fa fa-twitter"></Link>
+        <Link to="#" className="fa fa-google"></Link>
+      </div>
 
-                <div className='link'>
-                <Link to="#" className="fa fa-facebook"></Link>
-                <Link to="#" className="fa fa-twitter"></Link>
-                <Link to="#" className="fa fa-google"></Link>
-                </div>
-            <ToastContainer/>
-        </div>
-    );
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default SignIn;
