@@ -23,6 +23,7 @@ function SignUp() {
       password: currentPasswordvalue,
     };
 
+    console.log(user);
     try {
       const response = await axios.post(
         "http://localhost:4000/api/user/add",

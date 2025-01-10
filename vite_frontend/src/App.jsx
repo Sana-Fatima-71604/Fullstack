@@ -8,8 +8,8 @@ import CourseLink from "./LinkedPages/CourseLink.jsx";
 import MessageLink from "./LinkedPages/MessageLink.jsx";
 import ReportLink from "./LinkedPages/ReportLink.jsx";
 import SettingLink from "./LinkedPages/SettingLink.jsx";
-import Demo from "./demo.jsx";
-import { useState, React } from "react";
+import Demo from "./Demo.jsx";
+import { useState } from "react";
 import Context from "./Context/Context.jsx";
 
 function App() {

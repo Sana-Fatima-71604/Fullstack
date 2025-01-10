@@ -1,0 +1,29 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 300px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  margin-top: 100px;
+  overflow-y: auto;
+  margin-bottom: 50px;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+body {
+  background-color: lightgray;
+}

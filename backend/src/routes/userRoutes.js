@@ -14,6 +14,7 @@ const {
   save,
   hash,
   login,
+  getUserByEmail,
 } = require("../controllers/userController");
 
 // routes
@@ -42,5 +43,7 @@ router.post("/save", save);
 router.get("/hash", hash);
 
 router.post("/login", login);
+
+router.get("/getUserAccount", getUserByEmail);
 
 module.exports = router;

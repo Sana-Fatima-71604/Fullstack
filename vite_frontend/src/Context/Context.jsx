@@ -2,6 +2,8 @@ import { createContext } from "react";
 
 const Context = createContext("");
 
+export default Context;
+
 // function Provider({ children }) {
 //   const [email, changemail] = useState("null@gmail.com");
 //   return (
@@ -12,4 +14,4 @@ const Context = createContext("");
 // }
 
 // export { Provider };
-export default Context;
+

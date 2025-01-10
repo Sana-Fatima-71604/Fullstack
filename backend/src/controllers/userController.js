@@ -134,6 +134,24 @@ const getUserById = async (req, res) => {
   }
 };
 
+const getUserByEmail = async (req, res) => {
+  const email = req.body.email;
+
+  try {
+    if (email == null) {
+      res.json({
+        error: "There is some error. This e-mail id does not exists",
+      });
+    } else {
+      console.log("It is done");
+      const user = await User.findOne({ email: email });
+      res.json(user);
+    }
+  } catch (error) {
+    res.json({ error: "There is not an object with this email id" });
+  }
+};
+
 const findOnes = async (req, res) => {
   try {
     const user = await User.findOne({ age: 24 });
@@ -224,4 +242,5 @@ module.exports = {
   save,
   hash,
   login,
+  getUserByEmail,
 };

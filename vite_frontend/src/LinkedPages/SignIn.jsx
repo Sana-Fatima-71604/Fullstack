@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
 import "../Styles/Sign.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
